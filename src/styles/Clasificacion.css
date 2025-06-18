@@ -1,0 +1,200 @@
+:root {
+  --rojo: #d32f2f;
+  --rojo-oscuro: #b71c1c;
+  --rojo-claro: #e57373;
+  --blanco: #fff;
+  --negro: #111;
+  --gris: #f5f5f5;
+  --borde: #ddd;
+  --sombra: 0 2px 16px #0002;
+  --radius: 16px;
+  --trans: all .14s;
+}
+
+/* CONTENEDOR */
+.clasificacion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--blanco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 2.1rem 2rem 1.3rem 2rem;
+  margin: 2.1rem auto;
+  max-width: 1240px;    /* +++ MÁS ANCHO +++ */
+  min-width: 320px;
+}
+
+.clasificacion-title {
+  color: var(--rojo, #d32f2f);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.clasificacion-table {
+  width: 100%;
+  max-width: 1160px;    /* +++ MÁS ANCHO +++ */
+  margin: 2rem auto 1.2rem auto;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  box-shadow: var(--sombra);
+}
+
+/* TABLA */
+.clasificacion-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--blanco);
+  border-radius: var(--radius);
+  font-size: 1.09em;
+  overflow: hidden;
+}
+
+.clasificacion-table th,
+.clasificacion-table td {
+  padding: 0.7rem 0.35rem;       /* Menos padding vertical, más horizontal */
+  text-align: center;
+  border-bottom: 1px solid var(--borde);
+  transition: var(--trans);
+  font-size: 1.03em;
+}
+
+/* Columna PAREJA más ancha y alineada a la izquierda */
+.clasificacion-table th:nth-child(2),
+.clasificacion-table td:nth-child(2) {
+  min-width: 180px;
+  max-width: 250px;
+  text-align: left;
+  font-weight: 700;
+  padding-left: 1.1rem;
+  letter-spacing: 0.5px;
+  font-size: 1.09em;
+  white-space: nowrap;
+}
+
+/* La columna POSICIÓN algo más pequeña */
+.clasificacion-table th:first-child,
+.clasificacion-table td:first-child {
+  width: 40px;
+  min-width: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Columnas de estadísticas numéricas más compactas */
+.clasificacion-table th:not(:first-child):not(:nth-child(2)),
+.clasificacion-table td:not(:first-child):not(:nth-child(2)) {
+  min-width: 44px;
+  max-width: 60px;
+  padding-right: 0.15rem;
+  padding-left: 0.15rem;
+  font-size: 1.02em;
+}
+
+.clasificacion-table td {
+  font-size: 1.03em;
+}
+
+/* Limita la altura máxima de cada fila */
+.clasificacion-table tr {
+  max-height: 32px;
+}
+
+/* CABECERA */
+.clasificacion-table th {
+  background: var(--rojo);
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: 1.13em;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #d32f2f1c;
+}
+.clasificacion-table tr:last-child td {
+  border-bottom: none;
+}
+.clasificacion-table tr:nth-child(even) td {
+  background: #fcf3f3;
+}
+.clasificacion-table tr:hover td {
+  background: #fff0f0;
+  transition: background 0.13s;
+}
+/* Fila 1er puesto resaltada */
+.clasificacion-table tr:first-child td {
+  background: #ffeaea;
+  font-weight: 800;
+  color: var(--rojo-oscuro);
+}
+
+/* Dropdown de división arriba */
+.clasificacion-container > div > label {
+  font-weight: 700;
+  color: var(--rojo-oscuro);
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+.clasificacion-container select {
+  background: var(--gris);
+  border: 1.2px solid var(--rojo-claro);
+  font-size: 1.03em;
+  border-radius: 7px;
+  margin-bottom: 0.3rem;
+  padding: 7px 14px;
+  transition: border .15s;
+}
+.clasificacion-container select:focus {
+  border: 1.5px solid var(--rojo);
+  background: var(--blanco);
+}
+
+/* Responsive para tablet (menos de 1100px) */
+@media (max-width: 1100px) {
+  .clasificacion-container { max-width: 98vw; }
+  .clasificacion-table { max-width: 96vw; }
+  .clasificacion-table th, .clasificacion-table td {
+    font-size: 0.95em;
+    padding: 0.55rem 0.12rem;
+  }
+  .clasificacion-table th:nth-child(2),
+  .clasificacion-table td:nth-child(2) {
+    min-width: 120px;
+    font-size: 1em;
+    padding-left: 0.6rem;
+  }
+}
+
+/* Responsive móvil (menos de 650px) */
+@media (max-width: 650px) {
+  .clasificacion-container {
+    padding: 0.5rem 2px;
+    margin: 0.7rem 0;
+    box-shadow: none;
+  }
+  .clasificacion-table {
+    min-width: 375px;
+    font-size: 0.91em;
+    overflow-x: auto;
+    box-shadow: 0 1px 4px #d32f2f10;
+  }
+  .clasificacion-table th, .clasificacion-table td {
+    padding: 5px 1vw;
+    word-break: break-word;
+  }
+  .clasificacion-table th:nth-child(2),
+  .clasificacion-table td:nth-child(2) {
+    min-width: 77px;
+    padding-left: 0.32rem;
+  }
+}
+
+/* Bonus: animación de entrada */
+.clasificacion-table {
+  animation: fadeInClas 0.22s;
+}
+@keyframes fadeInClas {
+  from { opacity: 0; transform: translateY(-7px);}
+  to { opacity: 1; transform: translateY(0);}
+}

@@ -1,0 +1,224 @@
+:root {
+  --rojo: #d32f2f;
+  --rojo-claro: #e57373;
+  --rojo-oscuro: #b71c1c;
+  --blanco: #fff;
+  --negro: #111;
+  --gris: #f5f5f5;
+  --borde: #ddd;
+  --radius: 15px;
+  --sombra: 0 2px 14px #d32f2f19;
+  --radius: 14px;
+  --trans: all 0.18s cubic-bezier(.3,.79,.41,.96);
+  --font: 'Montserrat', 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--gris);
+  color: var(--negro);
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  color: var(--rojo);
+  text-align: center;
+  margin-top: 1.6rem;
+  margin-bottom: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 8px #d32f2f1c;
+}
+
+a {
+  color: var(--rojo);
+  text-decoration: none;
+  transition: color .15s;
+}
+a:hover {
+  color: var(--rojo-oscuro);
+  text-decoration: underline;
+}
+
+.crud-container,
+.calendario-container,
+.clasificacion-container,
+.divisiones-container {
+  background: var(--blanco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 2.3rem 2.3rem 1.2rem 2.3rem;
+  margin: 2.3rem auto;
+  max-width: 950px;
+  min-width: 320px;
+}
+
+.pareja-form, .form-editar-resultado {
+  background: var(--gris2);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 7px #0001;
+  margin-bottom: 1.7rem;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+input, select {
+  border: 1.5px solid var(--borde);
+  border-radius: 7px;
+  padding: 10px 12px;
+  font-size: 1.04em;
+  margin-right: 0.7rem;
+  margin-bottom: 0.65rem;
+  transition: var(--trans);
+  background: var(--gris);
+  outline: none;
+  color: var(--negro);
+}
+
+input:focus, select:focus {
+  border: 1.5px solid var(--rojo);
+  background: var(--blanco);
+}
+
+input[type="text"], input[type="number"] {
+  min-width: 180px;
+}
+
+button, input[type="submit"] {
+  background: linear-gradient(90deg, var(--rojo) 60%, var(--rojo-oscuro));
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-weight: 700;
+  font-size: 1.06em;
+  box-shadow: 0 2px 8px #d32f2f33;
+  cursor: pointer;
+  transition: var(--trans);
+  margin-left: 5px;
+  margin-bottom: 0.5rem;
+}
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, var(--negro) 60%, var(--rojo));
+  color: var(--blanco);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 8px 24px #d32f2f3a;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--blanco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  margin: 0 auto 2rem auto;
+  overflow: hidden;
+  font-size: 1.08em;
+}
+
+th, td {
+  padding: 1.05rem 0.7rem;
+  text-align: center;
+  border-bottom: 1px solid var(--borde);
+  transition: var(--trans);
+}
+th {
+  background: var(--rojo);
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: 1.13em;
+  letter-spacing: 1px;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background: var(--rojo-claro);
+}
+
+tr:nth-child(even) td {
+  background: #fcf3f3;
+}
+tr:hover td {
+  background: #fff0f0;
+}
+
+.resultado-detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultado-sets {
+  font-size: 1.14em;
+  font-weight: 800;
+  color: var(--negro);
+  margin-bottom: 1px;
+  letter-spacing: 1.1px;
+}
+.resultado-global {
+  font-size: 0.98em;
+  color: var(--rojo-oscuro);
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+input[type="text"] {
+  min-width: 230px;
+  font-size: 1.05em;
+  background: var(--blanco);
+}
+
+@media (max-width: 900px) {
+  .crud-container,
+  .calendario-container,
+  .clasificacion-container,
+  .divisiones-container {
+    padding: 1.1rem 0.5rem;
+    min-width: unset;
+    max-width: 99vw;
+  }
+  .pareja-form, .form-editar-resultado {
+    min-width: unset;
+    padding: 0.6rem;
+  }
+  table {
+    font-size: 0.97em;
+    box-shadow: 0 1px 4px #d32f2f17;
+  }
+}
+
+@media (max-width: 600px) {
+  .crud-container,
+  .calendario-container,
+  .clasificacion-container,
+  .divisiones-container {
+    padding: 0.45rem 2px;
+    margin: 0.8rem 0 0.8rem 0;
+    box-shadow: none;
+  }
+  table {
+    min-width: 370px;
+    font-size: 0.95em;
+    overflow-x: auto;
+    box-shadow: 0 1px 4px #d32f2f11;
+  }
+  th, td {
+    padding: 7px 2px;
+    word-break: break-word;
+  }
+  input, select, button {
+    font-size: 1em;
+    width: 98%;
+    margin-bottom: 7px;
+    min-width: unset;
+  }
+  input[type="text"], input[type="number"] {
+    min-width: 73vw;
+  }
+}

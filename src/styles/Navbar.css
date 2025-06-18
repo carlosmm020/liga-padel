@@ -1,0 +1,57 @@
+.navbar {
+  width: 100vw;
+  min-width: 320px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(90deg, var(--rojo), var(--rojo-claro) 70%);
+  box-shadow: 0 3px 18px #d32f2f2d;
+  border-bottom: 3px solid var(--rojo-oscuro, #b71c1c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.5rem 0.4rem 0.5rem;
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  font-size: 1.13rem;
+  font-weight: 600;
+}
+
+.navbar-link {
+  color: var(--blanco);
+  text-decoration: none;
+  position: relative;
+  padding: 2px 7px;
+  border-radius: 7px;
+  letter-spacing: 0.5px;
+  transition: background 0.16s, color 0.16s;
+}
+.navbar-link:hover,
+.navbar-link.active {
+  background: var(--blanco);
+  color: var(--rojo);
+  box-shadow: 0 2px 7px #d32f2f14;
+  text-decoration: none;
+}
+.navbar-link:active {
+  background: var(--rojo-oscuro, #c62828);
+  color: var(--blanco);
+}
+
+/* Responsive hamburguesa para móvil */
+@media (max-width: 700px) {
+  .navbar {
+    justify-content: flex-start;
+    padding: 0.5rem 4vw;
+    min-width: 0;
+  }
+  .navbar-links {
+    gap: 0.7rem;
+    font-size: 1em;
+  }
+}
