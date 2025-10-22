@@ -63,7 +63,7 @@ function miniLiga(parejasEmpatadas, partidosDiv) {
 
 // Esta es la nueva función de ordenación, más compleja pero precisa
 function ordenarClasificacion(clasificacion, partidosDiv) {
-  // 1º Ordena por puntos (ya lo hacía tu código)
+  // 1º Ordena por puntos
   clasificacion.sort((a, b) => b.puntos - a.puntos);
 
   // 2º Encuentra grupos de empatados a puntos
