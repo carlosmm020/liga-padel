@@ -15,7 +15,10 @@ const jugadoresRouter = require("./routes/jugadores");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://liga-padel-iota.vercel.app', // tu dominio de Vercel
+  credentials: true
+}));
 app.use(express.json());
 
 // Ruta de Login (no necesita token)
