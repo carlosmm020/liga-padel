@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import "../styles/Clasificacion.css"
 import ordenarClasificacion from "../utils/ordenarClasificacion";
 
-const API_PAREJAS = "http://localhost:5000/api/parejas";
-const API_DIVISIONES = "http://localhost:5000/api/divisiones";
-const API_PARTIDOS = "http://localhost:5000/api/partidos";
+const API_PAREJAS = "https://liga-padel.onrender.com/api/parejas";
+const API_DIVISIONES = "https://liga-padel.onrender.com/api/divisiones";
+const API_PARTIDOS = "https://liga-padel.onrender.com/api/partidos";
 
 const Clasificacion = () => {
   const [parejas, setParejas] = useState([]);

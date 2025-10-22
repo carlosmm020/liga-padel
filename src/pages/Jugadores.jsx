@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import ConfirmModal from "../components/ConfirmModal";
 import "../styles/Jugadores.css";
 
-const API_JUGADORES = "http://localhost:5000/api/jugadores";
+const API_JUGADORES = "https://liga-padel.onrender.com/api/jugadores";
 
 export default function Jugadores() {
   const { token, isAdmin } = useAuth();

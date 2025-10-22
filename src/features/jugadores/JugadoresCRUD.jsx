@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { toast } from "react-toastify";
 
-const API_JUGADORES = "http://localhost:5000/api/jugadores";
+const API_JUGADORES = "https://liga-padel.onrender.com/api/jugadores";
 
 export default function JugadoresCRUD() {
   const { token, isAdmin } = useAuth();

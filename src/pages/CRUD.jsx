@@ -4,9 +4,9 @@ import { toast } from "react-toastify";
 import ConfirmModal from "../components/ConfirmModal";
 import "../styles/CRUD.css";
 
-const API_PAREJAS = "http://localhost:5000/api/parejas";
-const API_JUGADORES = "http://localhost:5000/api/jugadores";
-const API_DIVISIONES = "http://localhost:5000/api/divisiones";
+const API_PAREJAS = "https://liga-padel.onrender.com/api/parejas";
+const API_JUGADORES = "https://liga-padel.onrender.com/api/jugadores";
+const API_DIVISIONES = "https://liga-padel.onrender.com/api/divisiones";
 
 const CRUD = () => {
   const { token, isAdmin } = useAuth();
