@@ -16,7 +16,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://liga-padel-iota.vercel.app', // tu dominio de Vercel
+  origin: '*',
   credentials: true
 }));
 app.use(express.json());
